@@ -35,6 +35,9 @@ export default function ChatComponent({ hubConnection }: ChatComponentProps) {
     });
 
     // TODO: Écouter le message pour mettre à jour la liste de channels
+    hubConnection.on('ChannelList' , (data) =>{
+      setChannelsList(data);
+    });
 
     // TODO: Écouter le message pour quitter un channel (lorsque le channel est effacé)
 
